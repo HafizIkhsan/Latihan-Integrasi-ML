@@ -41,6 +41,7 @@ jobs:
       - name: Get latest MLflow run_id
         run: |
           RUN_ID=$(ls -td mlruns/0/*/ | grep -v 'models' | head -n 1 | cut -d'/' -f3)
+          ls -R mlruns
           echo "RUN_ID=$RUN_ID" >> $GITHUB_ENV
           echo "Latest run_id: $RUN_ID"
           
